@@ -14,7 +14,7 @@ occupation
 level of education 
 Ethnicity
 Parent
-
+BuddyOrNot
 
 
 -Admin
