@@ -2,6 +2,8 @@
 Government Issued I.D (SIN , Driver's license, Medical, passport,  ) as a layer of security
 First Name
 Last Name
+userName
+passWord
 date of birth
 email
 phone number
