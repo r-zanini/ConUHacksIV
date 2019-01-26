@@ -1,0 +1,25 @@
+-Regular User
+Government Issued I.D (SIN , Driver's license, Medical, passport,  ) as a layer of security
+First Name
+Last Name
+date of birth
+email
+phone number
+address
+languages
+proficiency of language
+occupation
+level of education 
+Ethnicity
+Parent
+
+
+
+-Admin
+
+
+-moderators
+
+
+-statistics viewers
+
