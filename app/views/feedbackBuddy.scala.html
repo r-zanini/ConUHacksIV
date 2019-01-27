@@ -1,0 +1,43 @@
+@import models.users.UserGhost
+@import helper._
+@(userForm: Form[UserGhost])
+@layouts.main("Rate your Buddy"){
+	<fieldset>
+		@inputText(userForm("uName"), 'label -> "User Name")
+		Language:
+		<form action="">
+			English<input type="radio" name="language" value="english"><br>
+			French<input type="radio" name="language" value="english"><br>
+			Bilingual<input type="radio" name="language" value="english"><br>
+		</form>
+
+		<br>
+
+		Rate Friendliness (0 to 5) :<input type="number" name="Friendliness" value = "0" min="0" max="5"><br>
+
+		Personality:
+		<select>
+			<option value="">Extrovert</option>
+			<option value="">Introvert</option>
+			<option value="">Ambivert</option>
+		</select>
+
+		<select>
+			<option value="">Calm</option>
+			<option value="">Active</option>
+		</select>
+
+		<select>
+			<option value="">Talkative</option>
+			<option value="">Quiet</option>
+		</select><br><br>
+
+		How likely are you hang out again with the buddy? (0 to 5): <input type="number" name="Friendliness" value = "0" min="0" max="5"><br>
+		Comments : <input type="text" name="Comment" value=""><br>
+		Incident reports : <input type="text" name="Incident report" value=""><br>
+
+		<br>
+		<button>Submit</button>
+
+	</fieldset>
+}

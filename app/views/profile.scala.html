@@ -1,0 +1,12 @@
+@import models.users.UserGhost
+@import helper._
+@(userForm: Form[UserGhost])
+@layouts.main("Profile"){
+	@form(action = routes.UserController.profile){
+		@inputText(userForm("fName"), 'label -> "First Name")
+		@inputText(userForm("lName"), 'label -> "Last Name")
+		@inputText(userForm("uName"), 'label -> "User Name")
+		@inputText(userForm("email"), 'label -> "Email")
+		@inputText(userForm("address"), 'label -> "Address")
+	}
+}

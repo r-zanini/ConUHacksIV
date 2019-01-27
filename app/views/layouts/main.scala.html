@@ -1,0 +1,90 @@
+@(title: String)(content: Html)
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>@title</title>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" type="text/css" href="@routes.Assets.versioned("lib/bootstrap/4.2.1/css/bootstrap.min.css")">
+		<script src="@routes.Assets.versioned("lib/jquery/jquery-3.3.1.min.js")"></script>
+		<script src=" @routes.Assets.versioned("lib/bootstrap/4.2.1/js/bootstrap.bundle.min.js")"></script>
+	</head>
+
+	<body style="background-color: #f9f9f9;">
+		<header>
+			<div class="row align-content-center">
+				<img src="@routes.Assets.versioned("img/quebecflag.png")" alt="QuebecFlag" width="160px" height="80px">
+				<img src="@routes.Assets.versioned("img/canadianflag.png")" alt="CanadaFlag" width="160px" height="80px">
+			</div>
+
+			<nav class="navbar navbar-expand-md navbar-light" style="background-color: #335075;">
+				<a class="navbar-brand text-white" href="#">Canadian Buddies</a>
+				<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+					<span class="navbar-toggler-icon"></span>
+				</button>
+				<div class="collapse navbar-collapse" id="navbarTogglerDemo02" >
+					<ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+					@if(ctx().session().get("user") == null) {
+						<li class="nav-item active">
+							<a class="nav-link text-white" href="#">Sign up</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link text-white" href="@routes.HomeController.login()">Login</a>
+						</li>
+					} else {
+						<li class="nav-item">
+							<a class="nav-link text-white" href="@routes.HomeController.services()" tabindex="-1" aria-disabled="true">Services</a>
+						</li>
+
+						<li class="nav-item">
+							<a class="nav-link text-white" href="#" tabindex="-1" aria-disabled="true">Buddy</a>
+						</li>
+
+						<li class="nav-item">
+							<a class="nav-link text-white" href="@routes.HomeController.activities()" tabindex="-1" aria-disabled="true">Activities</a>
+						</li>
+
+						<li class="nav-item">
+							<a class="nav-link text-white" href="#" tabindex="-1" aria-disabled="true">Service Feedback</a>
+						</li>
+
+						<li class="nav-item">
+							<a class="nav-link text-white" href="@routes.UserController.getBlankFeedbackUser("r.zanini")" tabindex="-1" aria-disabled="true">Buddy Feedback</a>
+						</li>
+
+						<li class="nav-item">
+							<a class="nav-link text-white" href="@routes.UserController.profile()" tabindex="-1" aria-disabled="true">Settings</a>
+						</li>
+					}
+					</ul>
+					<form class="form-inline my-2 my-lg-0">
+						<div class="input-group mb-3">
+							<input type="text" class="form-control" placeholder="Search" aria-label="Search" aria-describedby="button-addon2">
+							<div class="input-group-append">
+								<button class="btn btn-outline-secondary" type="button" id="button-addon2">Button</button>
+							</div>
+						</div>
+					</form>
+				</div>
+			</nav>
+
+		</header>
+		<main class="container">@content </main>
+		<footer align="center" style="background-color: #335075;padding: 5%;margin-top: 5%;" >
+			<h1>Contact Us</h1>
+			<div class="input-group mb-2 col-12 col-sm-9">
+				<div class="input-group-prepend">
+					<span class="input-group-text" id="basic-addon1">Email</span>
+				</div>
+				<input type="email" class="form-control" placeholder="Email" aria-label="Email" aria-describedby="basic-addon1">
+			</div>
+			<div class="input-group col-12 col-sm-9">
+				<div class="input-group-prepend">
+					<span class="input-group-text">Message</span>
+				</div>
+				<textarea class="form-control" aria-label="Message" rows="6"></textarea>
+			</div><br>
+			<button>Submit</button>
+		</footer>
+	</body>
+</html>

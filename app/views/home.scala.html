@@ -1,0 +1,16 @@
+@()
+@layouts.main("Home") {
+	<script src="@routes.Assets.versioned("lib/jquery/jquery-3.3.1.min.js")"></script>
+	<script src=" @routes.Assets.versioned("lib/bootstrap/4.2.1/js/bootstrap.min.js")"></script>
+	<div class="container">
+		<img src="@routes.Assets.versioned("img/rib.jpg")" alt="Rib fest" style="height: 100%;
+						width: 100%;">
+
+		<div id="newsFeed" padding="10%" align="center" style="padding: 2%">
+			<h1 >News Feed</h1>
+			<h4>Igloo Fest 2019</h4>
+			<h4>ConUHacks 2019</h4>
+			<h4>St-Jean</h4>
+		</div>
+	</div>
+}
